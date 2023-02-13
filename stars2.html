@@ -67,7 +67,7 @@
     // ================================================================
 
 
-    var mainStarGeometry = starGeometry(35);
+    var mainStarGeometry = starGeometry(size);
     mainStarGeometry.vertexColors = colors;
 
     var square_material = new THREE.MeshBasicMaterial({
@@ -110,12 +110,12 @@
 
 
     var starMesh = new THREE.Mesh(mainStarGeometry, square_material)
-    var starGeom0 = starGeometry(35);
-    var starGeom1 = starGeometry(35);
-    var starGeom2 = starGeometry(35);
-    var starGeom3 = starGeometry(35);
-    var starGeom4 = starGeometry(35);
-    var starGeom5 = starGeometry(35);
+    var starGeom0 = starGeometry(size);
+    var starGeom1 = starGeometry(size);
+    var starGeom2 = starGeometry(size);
+    var starGeom3 = starGeometry(size);
+    var starGeom4 = starGeometry(size);
+    var starGeom5 = starGeometry(size);
 
     var starMesh0 = new THREE.Mesh(starGeom0, star_materials[0]);
     var starMesh1 = new THREE.Mesh(starGeom1, star_materials[1]);
@@ -124,12 +124,12 @@
     var starMesh4 = new THREE.Mesh(starGeom4, star_materials[4]);
     var starMesh5 = new THREE.Mesh(starGeom5, star_materials[5]);
 
-    starMesh0.position.set(50, 0, 0);
-    starMesh1.position.set(25, 50, 0);
-    starMesh2.position.set(-25, 50, 0);
-    starMesh3.position.set(25, -50, 0);
-    starMesh4.position.set(-25, -50, 0);
-    starMesh5.position.set(-50, 0, 0);
+    starMesh0.position.set(70, 0, 0);
+    starMesh1.position.set(35, 70, 0);
+    starMesh2.position.set(-35, 70, 0);
+    starMesh3.position.set(35, -70, 0);
+    starMesh4.position.set(-35, -70, 0);
+    starMesh5.position.set(-70, 0, 0);
 
 
     
