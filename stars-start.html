@@ -68,7 +68,16 @@
 
 
     var starGeometry = starGeometry(35);
-    var starMesh = new THREE.Mesh(starGeometry)
+    starGeometry.vertexColors = colors;
+
+    var square_material = new THREE.MeshBasicMaterial({
+      vertexColors: THREE.VertexColors,
+      side: THREE.DoubleSide
+    });
+    TW.computeFaceColors(starGeometry);
+
+    var starMesh = new THREE.Mesh(starGeometry, square_material)
+
     scene.add(starMesh);
 
     var renderer = new THREE.WebGLRenderer();
