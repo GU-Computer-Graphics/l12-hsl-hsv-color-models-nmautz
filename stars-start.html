@@ -66,6 +66,11 @@
 
     // ================================================================
 
+
+    var starGeometry = starGeometry(35);
+    var starMesh = new THREE.Mesh(starGeometry)
+    scene.add(starMesh);
+
     var renderer = new THREE.WebGLRenderer();
 
     TW.mainInit(renderer, scene);
