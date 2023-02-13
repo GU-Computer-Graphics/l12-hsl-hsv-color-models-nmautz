@@ -36,7 +36,7 @@
     // function to create a Geometry for a three-pointed star with four triangular faces
     // size is the radius of the circle that circumscribes the star
 
-    var size = 50;
+    var size = 35;
 
     function starGeometry(size) {
       var starGeom = new THREE.Geometry();
@@ -124,13 +124,17 @@
     var starMesh4 = new THREE.Mesh(starGeom4, star_materials[4]);
     var starMesh5 = new THREE.Mesh(starGeom5, star_materials[5]);
 
-    starMesh0.position.set(70, 0, 0);
-    starMesh1.position.set(35, 70, 0);
-    starMesh2.position.set(-35, 70, 0);
-    starMesh3.position.set(35, -70, 0);
-    starMesh4.position.set(-35, -70, 0);
-    starMesh5.position.set(-70, 0, 0);
+    var star_mesh_array = [starMesh0, starMesh1, starMesh2, starMesh3, starMesh4, starMesh5];
 
+    let radius = 60;
+    let angle = 0;
+    for(var i = 0; i < star_mesh_array.length; i++){
+      angle += 60;
+      let radians = angle * Math.PI / 180;
+      let x = radius * Math.sin(radians);
+      let y = radius * Math.cos(radians);
+      star_mesh_array[i].position.set(x,y,0)
+    }
 
     
     
@@ -149,8 +153,8 @@
     TW.cameraSetup(renderer,
       scene,
       {
-        minx: -size, maxx: size,
-        miny: -size, maxy: size,
+        minx: -size*2, maxx: size*2,
+        miny: -size*2, maxy: size*2,
         minz: 5, maxz: 5
       });
   </script>
